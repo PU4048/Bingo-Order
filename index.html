@@ -23,110 +23,211 @@
 
 <form id="orderForm">
 
-  <div class="category">
+  <!-- Hidden field to store the snack name -->
+  <input type="hidden" id="snackName" name="snackName" value="Tedhe Mede">
+
+  <!-- Snack Category: Dynamically update the snack name based on the category selected -->
+  <label for="snackCategory">Choose Snack Category:</label>
+  <select id="snackCategory" name="snackCategory" required>
+    <option value="Tedhe Mede">Tedhe Mede</option>
+    <option value="Nachos">Nachos</option>
+    <option value="Mad Angles">Mad Angles</option>
+    <option value="No Rulz">No Rulz</option>
+  </select>
+
+  <!-- Tedhe Mede Category -->
+  <div class="category" id="tedheMede">
     <h2>Tedhe Mede</h2>
 
+    <!-- Masala Flavour -->
     <div class="flavour">
       <h3>Masala</h3>
       <div class="item">
         <label for="tedhe-masala-5">MRP ₹5</label>
         <div class="price">₹5</div>
-        <input type="number" id="tedhe-masala-5" name="tedhe-masala-5" min="0" value="0" />
+        <input type="number" id="tedhe-masala-5" name="tedhe-masala-5" min="0" value="0" data-price="5" />
       </div>
       <div class="item">
         <label for="tedhe-masala-10">MRP ₹10</label>
         <div class="price">₹10</div>
-        <input type="number" id="tedhe-masala-10" name="tedhe-masala-10" min="0" value="0" />
+        <input type="number" id="tedhe-masala-10" name="tedhe-masala-10" min="0" value="0" data-price="10" />
       </div>
       <div class="item">
         <label for="tedhe-masala-20">MRP ₹20</label>
         <div class="price">₹20</div>
-        <input type="number" id="tedhe-masala-20" name="tedhe-masala-20" min="0" value="0" />
+        <input type="number" id="tedhe-masala-20" name="tedhe-masala-20" min="0" value="0" data-price="20" />
       </div>
       <div class="item">
         <label for="tedhe-masala-50">MRP ₹50</label>
         <div class="price">₹50</div>
-        <input type="number" id="tedhe-masala-50" name="tedhe-masala-50" min="0" value="0" />
+        <input type="number" id="tedhe-masala-50" name="tedhe-masala-50" min="0" value="0" data-price="50" />
       </div>
     </div>
 
+    <!-- Extra Teekha Flavour -->
     <div class="flavour">
       <h3>Extra Teekha</h3>
       <div class="item">
         <label for="tedhe-teekha-5">MRP ₹5</label>
         <div class="price">₹5</div>
-        <input type="number" id="tedhe-teekha-5" name="tedhe-teekha-5" min="0" value="0" />
+        <input type="number" id="tedhe-teekha-5" name="tedhe-teekha-5" min="0" value="0" data-price="5" />
       </div>
       <div class="item">
         <label for="tedhe-teekha-10">MRP ₹10</label>
         <div class="price">₹10</div>
-        <input type="number" id="tedhe-teekha-10" name="tedhe-teekha-10" min="0" value="0" />
+        <input type="number" id="tedhe-teekha-10" name="tedhe-teekha-10" min="0" value="0" data-price="10" />
       </div>
       <div class="item">
         <label for="tedhe-teekha-20">MRP ₹20</label>
         <div class="price">₹20</div>
-        <input type="number" id="tedhe-teekha-20" name="tedhe-teekha-20" min="0" value="0" />
+        <input type="number" id="tedhe-teekha-20" name="tedhe-teekha-20" min="0" value="0" data-price="20" />
       </div>
       <div class="item">
         <label for="tedhe-teekha-50">MRP ₹50</label>
         <div class="price">₹50</div>
-        <input type="number" id="tedhe-teekha-50" name="tedhe-teekha-50" min="0" value="0" />
+        <input type="number" id="tedhe-teekha-50" name="tedhe-teekha-50" min="0" value="0" data-price="50" />
       </div>
     </div>
   </div>
 
-  <div class="category">
+  <!-- Nachos Category -->
+  <div class="category" id="nachos">
     <h2>Nachos</h2>
 
+    <!-- Cheese Flavour -->
     <div class="flavour">
       <h3>Cheese</h3>
       <div class="item">
         <label for="nachos-cheese-5">MRP ₹5</label>
         <div class="price">₹5</div>
-        <input type="number" id="nachos-cheese-5" name="nachos-cheese-5" min="0" value="0" />
+        <input type="number" id="nachos-cheese-5" name="nachos-cheese-5" min="0" value="0" data-price="5" />
       </div>
       <div class="item">
         <label for="nachos-cheese-10">MRP ₹10</label>
         <div class="price">₹10</div>
-        <input type="number" id="nachos-cheese-10" name="nachos-cheese-10" min="0" value="0" />
+        <input type="number" id="nachos-cheese-10" name="nachos-cheese-10" min="0" value="0" data-price="10" />
       </div>
       <div class="item">
         <label for="nachos-cheese-20">MRP ₹20</label>
         <div class="price">₹20</div>
-        <input type="number" id="nachos-cheese-20" name="nachos-cheese-20" min="0" value="0" />
+        <input type="number" id="nachos-cheese-20" name="nachos-cheese-20" min="0" value="0" data-price="20" />
       </div>
       <div class="item">
         <label for="nachos-cheese-50">MRP ₹50</label>
         <div class="price">₹50</div>
-        <input type="number" id="nachos-cheese-50" name="nachos-cheese-50" min="0" value="0" />
+        <input type="number" id="nachos-cheese-50" name="nachos-cheese-50" min="0" value="0" data-price="50" />
       </div>
     </div>
 
+    <!-- Chilli Limon Flavour -->
     <div class="flavour">
       <h3>Chilli Limon</h3>
       <div class="item">
         <label for="nachos-chilli-5">MRP ₹5</label>
         <div class="price">₹5</div>
-        <input type="number" id="nachos-chilli-5" name="nachos-chilli-5" min="0" value="0" />
+        <input type="number" id="nachos-chilli-5" name="nachos-chilli-5" min="0" value="0" data-price="5" />
       </div>
       <div class="item">
         <label for="nachos-chilli-10">MRP ₹10</label>
         <div class="price">₹10</div>
-        <input type="number" id="nachos-chilli-10" name="nachos-chilli-10" min="0" value="0" />
+        <input type="number" id="nachos-chilli-10" name="nachos-chilli-10" min="0" value="0" data-price="10" />
       </div>
       <div class="item">
         <label for="nachos-chilli-20">MRP ₹20</label>
         <div class="price">₹20</div>
-        <input type="number" id="nachos-chilli-20" name="nachos-chilli-20" min="0" value="0" />
+        <input type="number" id="nachos-chilli-20" name="nachos-chilli-20" min="0" value="0" data-price="20" />
       </div>
       <div class="item">
         <label for="nachos-chilli-50">MRP ₹50</label>
         <div class="price">₹50</div>
-        <input type="number" id="nachos-chilli-50" name="nachos-chilli-50" min="0" value="0" />
+        <input type="number" id="nachos-chilli-50" name="nachos-chilli-50" min="0" value="0" data-price="50" />
       </div>
     </div>
   </div>
 
+  <!-- Mad Angles Category -->
+  <div class="category" id="madAngles">
+    <h2>Mad Angles</h2>
+
+    <!-- Red Alert Flavour -->
+    <div class="flavour">
+      <h3>Red Alert</h3>
+      <div class="item">
+        <label for="madangles-redalert-5">MRP ₹5</label>
+        <div class="price">₹5</div>
+        <input type="number" id="madangles-redalert-5" name="madangles-redalert-5" min="0" value="0" data-price="5" />
+      </div>
+      <div class="item">
+        <label for="madangles-redalert-10">MRP ₹10</label>
+        <div class="price">₹10</div>
+        <input type="number" id="madangles-redalert-10" name="madangles-redalert-10" min="0" value="0" data-price="10" />
+      </div>
+      <div class="item">
+        <label for="madangles-redalert-20">MRP ₹20</label>
+        <div class="price">₹20</div>
+        <input type="number" id="madangles-redalert-20" name="madangles-redalert-20" min="0" value="0" data-price="20" />
+      </div>
+      <div class="item">
+        <label for="madangles-redalert-50">MRP ₹50</label>
+        <div class="price">₹50</div>
+        <input type="number" id="madangles-redalert-50" name="madangles-redalert-50" min="0" value="0" data-price="50" />
+      </div>
+    </div>
+
+    <!-- Mystery Pickle Flavour -->
+    <div class="flavour">
+      <h3>Mystery Pickle</h3>
+      <div class="item">
+        <label for="madangles-mysterypickle-5">MRP ₹5</label>
+        <div class="price">₹5</div>
+        <input type="number" id="madangles-mysterypickle-5" name="madangles-mysterypickle-5" min="0" value="0" data-price="5" />
+      </div>
+      <div class="item">
+        <label for="madangles-mysterypickle-10">MRP ₹10</label>
+        <div class="price">₹10</div>
+        <input type="number" id="madangles-mysterypickle-10" name="madangles-mysterypickle-10" min="0" value="0" data-price="10" />
+      </div>
+      <div class="item">
+        <label for="madangles-mysterypickle-20">MRP ₹20</label>
+        <div class="price">₹20</div>
+        <input type="number" id="madangles-mysterypickle-20" name="madangles-mysterypickle-20" min="0" value="0" data-price="20" />
+      </div>
+      <div class="item">
+        <label for="madangles-mysterypickle-50">MRP ₹50</label>
+        <div class="price">₹50</div>
+        <input type="number" id="madangles-mysterypickle-50" name="madangles-mysterypickle-50" min="0" value="0" data-price="50" />
+      </div>
+    </div>
+
+    <!-- More Flavours (Add other flavours as needed) -->
+  </div>
+
+  <!-- No Rulz Category -->
+  <div class="category" id="noRulz">
+    <h2>No Rulz</h2>
+
+    <!-- Masala Flavour -->
+    <div class="flavour">
+      <h3>Masala</h3>
+      <div class="item">
+        <label for="norulz-masala-5">MRP ₹5</label>
+        <div class="price">₹5</div>
+        <input type="number" id="norulz-masala-5" name="norulz-masala-5" min="0" value="0" data-price="5" />
+      </div>
+    </div>
+
+    <!-- Cheese Flavour -->
+    <div class="flavour">
+      <h3>Cheese</h3>
+      <div class="item">
+        <label for="norulz-cheese-5">MRP ₹5</label>
+        <div class="price">₹5</div>
+        <input type="number" id="norulz-cheese-5" name="norulz-cheese-5" min="0" value="0" data-price="5" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Total Amount Calculation -->
   <div class="total">
     Total Amount: ₹<span id="totalAmount">0</span>
   </div>
@@ -135,70 +236,49 @@
 </form>
 
 <script>
-  const prices = {
-    "tedhe-masala-5": 5,
-    "tedhe-masala-10": 10,
-    "tedhe-masala-20": 20,
-    "tedhe-masala-50": 50,
-    "tedhe-teekha-5": 5,
-    "tedhe-teekha-10": 10,
-    "tedhe-teekha-20": 20,
-    "tedhe-teekha-50": 50,
-    "nachos-cheese-5": 5,
-    "nachos-cheese-10": 10,
-    "nachos-cheese-20": 20,
-    "nachos-cheese-50": 50,
-    "nachos-chilli-5": 5,
-    "nachos-chilli-10": 10,
-    "nachos-chilli-20": 20,
-    "nachos-chilli-50": 50
-  };
-
-  const inputs = document.querySelectorAll('input[type=number]');
-  const totalAmountSpan = document.getElementById('totalAmount');
+  // JavaScript for calculating the total amount
   const orderForm = document.getElementById('orderForm');
+  const totalAmountElement = document.getElementById('totalAmount');
 
-  function calculateTotal() {
-    let total = 0;
+  // Function to update the total bill amount
+  function updateTotal() {
+    let totalAmount = 0;
+
+    // Loop through all inputs with type number (quantity inputs)
+    const inputs = orderForm.querySelectorAll('input[type=number]');
     inputs.forEach(input => {
-      const qty = parseInt(input.value) || 0;
-      const price = prices[input.id] || 0;
-      total += qty * price;
+      const quantity = parseInt(input.value) || 0;
+      const price = parseInt(input.dataset.price) || 0;
+      totalAmount += quantity * price; // Calculate total price based on quantity * price
     });
-    totalAmountSpan.textContent = total;
+
+    // Update the total amount displayed
+    totalAmountElement.textContent = totalAmount;
   }
 
-  inputs.forEach(input => {
-    input.addEventListener('input', calculateTotal);
+  // Add event listeners for changes in quantity inputs
+  orderForm.querySelectorAll('input[type=number]').forEach(input => {
+    input.addEventListener('input', updateTotal);
   });
 
+  // JavaScript for form submission and sending data to Google Apps Script
   orderForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const orderData = {};
+    // Collect form data
+    const snackName = document.getElementById('snackName').value;
+    const orderData = { snackName };
 
-    let hasOrder = false;
+    const inputs = orderForm.querySelectorAll('input[type=number]');
     inputs.forEach(input => {
-      const qty = parseInt(input.value) || 0;
-      if (qty > 0) {
-        hasOrder = true;
-        orderData[input.name] = qty;
-      }
+      orderData[input.name] = input.value || 0;  // Add all form data to orderData
     });
 
-    if (!hasOrder) {
-      alert("Please enter quantity for at least one item.");
-      return;
-    }
-
-    orderData.totalAmount = totalAmountSpan.textContent;
-    orderData.timestamp = new Date().toISOString();
-
-    const url = 'https://script.google.com/macros/s/AKfycbxDKd0KW89XDz7BmhGuOwyKDdssyS6rw6_iCLJv2MIx0Hc-6T4eHSbmggI54Z3BPA7u/exec'; // Replace with your actual Apps Script URL
+    const url = 'https://script.google.com/macros/s/AKfycbzJ2avmG89HAylHff9yZWmoMUyxsh7cI37clPGo3lkkvGwK0afxMsXCD28u5Z5De-Q/exec';  // Your actual Apps Script URL
 
     const data = new URLSearchParams();
     for (const [key, value] of Object.entries(orderData)) {
-      data.append(key, value);
+      data.append(key, value);  // Append each form data field
     }
 
     try {
@@ -211,7 +291,7 @@
       if (result.result === "success") {
         alert("Order placed successfully!");
         orderForm.reset();
-        calculateTotal();
+        updateTotal(); // Reset the total amount
       } else {
         alert("Failed to place order. Please try again.");
       }
@@ -221,7 +301,8 @@
     }
   });
 
-  calculateTotal();
+  // Initialize total amount on page load
+  updateTotal();
 </script>
 
 </body>
