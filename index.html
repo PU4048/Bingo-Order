@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bingo Snacks Order Form</title>
-<style>
-  body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; }
-  h1, h2 { border-bottom: 2px solid #333; padding-bottom: 5px; }
-  .category { margin-bottom: 30px; }
-  .flavour { margin-bottom: 15px; }
-  .item { display: flex; justify-content: space-between; align-items: center; margin: 5px 0; }
-  label { flex: 2; }
-  .price { flex: 1; text-align: center; }
-  input[type=number] { width: 60px; padding: 5px; flex: 1; }
-  .total { font-weight: bold; font-size: 1.3em; margin-top: 30px; text-align: right; }
-  button { margin-top: 20px; padding: 10px 25px; font-size: 1.1em; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bingo Snacks Order Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; }
+    h1, h2 { border-bottom: 2px solid #333; padding-bottom: 5px; }
+    .category { margin-bottom: 30px; }
+    .flavour { margin-bottom: 15px; }
+    .item { display: flex; justify-content: space-between; align-items: center; margin: 5px 0; }
+    label { flex: 2; }
+    .price { flex: 1; text-align: center; }
+    input[type=number] { width: 60px; padding: 5px; flex: 1; }
+    .total { font-weight: bold; font-size: 1.3em; margin-top: 30px; text-align: right; }
+    button { margin-top: 20px; padding: 10px 25px; font-size: 1.1em; }
+  </style>
 </head>
 <body>
 
@@ -26,43 +26,35 @@
   <!-- Hidden field to store the snack name -->
   <input type="hidden" id="snackName" name="snackName" value="Tedhe Mede">
 
-  <!-- Snack Category: Dynamically update the snack name based on the category selected -->
-  <label for="snackCategory">Choose Snack Category:</label>
-  <select id="snackCategory" name="snackCategory" required>
-    <option value="Tedhe Mede">Tedhe Mede</option>
-    <option value="Nachos">Nachos</option>
-    <option value="Mad Angles">Mad Angles</option>
-    <option value="No Rulz">No Rulz</option>
-  </select>
-
   <!-- Tedhe Mede Category -->
   <div class="category" id="tedheMede">
     <h2>Tedhe Mede</h2>
 
-    <!-- Masala Flavour -->
+        <!-- Masala Flavour -->
     <div class="flavour">
       <h3>Masala</h3>
       <div class="item">
-        <label for="tedhe-masala-5">MRP ₹5</label>
+        <label for="tedhe-teekha-5">MRP ₹5</label>
         <div class="price">₹5</div>
-        <input type="number" id="tedhe-masala-5" name="tedhe-masala-5" min="0" value="0" data-price="5" />
+        <input type="number" id="tedhe-teekha-5" name="tedhe-teekha-5" min="0" value="0" data-price="5" />
       </div>
       <div class="item">
-        <label for="tedhe-masala-10">MRP ₹10</label>
+        <label for="tedhe-teekha-10">MRP ₹10</label>
         <div class="price">₹10</div>
-        <input type="number" id="tedhe-masala-10" name="tedhe-masala-10" min="0" value="0" data-price="10" />
+        <input type="number" id="tedhe-teekha-10" name="tedhe-teekha-10" min="0" value="0" data-price="10" />
       </div>
       <div class="item">
-        <label for="tedhe-masala-20">MRP ₹20</label>
+        <label for="tedhe-teekha-20">MRP ₹20</label>
         <div class="price">₹20</div>
-        <input type="number" id="tedhe-masala-20" name="tedhe-masala-20" min="0" value="0" data-price="20" />
+        <input type="number" id="tedhe-teekha-20" name="tedhe-teekha-20" min="0" value="0" data-price="20" />
       </div>
       <div class="item">
-        <label for="tedhe-masala-50">MRP ₹50</label>
+        <label for="tedhe-teekha-50">MRP ₹50</label>
         <div class="price">₹50</div>
-        <input type="number" id="tedhe-masala-50" name="tedhe-masala-50" min="0" value="0" data-price="50" />
+        <input type="number" id="tedhe-teekha-50" name="tedhe-teekha-50" min="0" value="0" data-price="50" />
       </div>
     </div>
+
 
     <!-- Extra Teekha Flavour -->
     <div class="flavour">
@@ -149,6 +141,56 @@
   <div class="category" id="madAngles">
     <h2>Mad Angles</h2>
 
+    <!-- Peri Peri Flavour -->
+    <div class="flavour">
+      <h3>Peri Peri</h3>
+      <div class="item">
+        <label for="madangles-periperi-5">MRP ₹5</label>
+        <div class="price">₹5</div>
+        <input type="number" id="madangles-periperi-5" name="madangles-periperi-5" min="0" value="0" data-price="5" />
+      </div>
+      <div class="item">
+        <label for="madangles-periperi-10">MRP ₹10</label>
+        <div class="price">₹10</div>
+        <input type="number" id="madangles-periperi-10" name="madangles-periperi-10" min="0" value="0" data-price="10" />
+      </div>
+      <div class="item">
+        <label for="madangles-periperi-20">MRP ₹20</label>
+        <div class="price">₹20</div>
+        <input type="number" id="madangles-periperi-20" name="madangles-periperi-20" min="0" value="0" data-price="20" />
+      </div>
+      <div class="item">
+        <label for="madangles-periperi-50">MRP ₹50</label>
+        <div class="price">₹50</div>
+        <input type="number" id="madangles-periperi-50" name="madangles-periperi-50" min="0" value="0" data-price="50" />
+      </div>
+    </div>
+
+    <!-- Masala Flavour -->
+    <div class="flavour">
+      <h3>Masala</h3>
+      <div class="item">
+        <label for="madangles-masala-5">MRP ₹5</label>
+        <div class="price">₹5</div>
+        <input type="number" id="madangles-masala-5" name="madangles-masala-5" min="0" value="0" data-price="5" />
+      </div>
+      <div class="item">
+        <label for="madangles-masala-10">MRP ₹10</label>
+        <div class="price">₹10</div>
+        <input type="number" id="madangles-masala-10" name="madangles-masala-10" min="0" value="0" data-price="10" />
+      </div>
+      <div class="item">
+        <label for="madangles-masala-20">MRP ₹20</label>
+        <div class="price">₹20</div>
+        <input type="number" id="madangles-masala-20" name="madangles-masala-20" min="0" value="0" data-price="20" />
+      </div>
+      <div class="item">
+        <label for="madangles-masala-50">MRP ₹50</label>
+        <div class="price">₹50</div>
+        <input type="number" id="madangles-masala-50" name="madangles-masala-50" min="0" value="0" data-price="50" />
+      </div>
+    </div>
+
     <!-- Red Alert Flavour -->
     <div class="flavour">
       <h3>Red Alert</h3>
@@ -199,7 +241,56 @@
       </div>
     </div>
 
-    <!-- More Flavours (Add other flavours as needed) -->
+    <!-- Pizza Flavour -->
+    <div class="flavour">
+      <h3>Pizza</h3>
+      <div class="item">
+        <label for="madangles-pizza-5">MRP ₹5</label>
+        <div class="price">₹5</div>
+        <input type="number" id="madangles-pizza-5" name="madangles-pizza-5" min="0" value="0" data-price="5" />
+      </div>
+      <div class="item">
+        <label for="madangles-pizza-10">MRP ₹10</label>
+        <div class="price">₹10</div>
+        <input type="number" id="madangles-pizza-10" name="madangles-pizza-10" min="0" value="0" data-price="10" />
+      </div>
+      <div class="item">
+        <label for="madangles-pizza-20">MRP ₹20</label>
+        <div class="price">₹20</div>
+        <input type="number" id="madangles-pizza-20" name="madangles-pizza-20" min="0" value="0" data-price="20" />
+      </div>
+      <div class="item">
+        <label for="madangles-pizza-50">MRP ₹50</label>
+        <div class="price">₹50</div>
+        <input type="number" id="madangles-pizza-50" name="madangles-pizza-50" min="0" value="0" data-price="50" />
+      </div>
+    </div>
+
+    <!-- Aachari Flavour -->
+    <div class="flavour">
+      <h3>Aachari</h3>
+      <div class="item">
+        <label for="madangles-aachari-5">MRP ₹5</label>
+        <div class="price">₹5</div>
+        <input type="number" id="madangles-aachari-5" name="madangles-aachari-5" min="0" value="0" data-price="5" />
+      </div>
+      <div class="item">
+        <label for="madangles-aachari-10">MRP ₹10</label>
+        <div class="price">₹10</div>
+        <input type="number" id="madangles-aachari-10" name="madangles-aachari-10" min="0" value="0" data-price="10" />
+      </div>
+      <div class="item">
+        <label for="madangles-aachari-20">MRP ₹20</label>
+        <div class="price">₹20</div>
+        <input type="number" id="madangles-aachari-20" name="madangles-aachari-20" min="0" value="0" data-price="20" />
+      </div>
+      <div class="item">
+        <label for="madangles-aachari-50">MRP ₹50</label>
+        <div class="price">₹50</div>
+        <input type="number" id="madangles-aachari-50" name="madangles-aachari-50" min="0" value="0" data-price="50" />
+      </div>
+    </div>
+
   </div>
 
   <!-- No Rulz Category -->
@@ -227,7 +318,7 @@
     </div>
   </div>
 
-  <!-- Total Amount Calculation -->
+  <!-- Total Amount -->
   <div class="total">
     Total Amount: ₹<span id="totalAmount">0</span>
   </div>
@@ -236,7 +327,6 @@
 </form>
 
 <script>
-  // JavaScript for calculating the total amount
   const orderForm = document.getElementById('orderForm');
   const totalAmountElement = document.getElementById('totalAmount');
 
@@ -265,16 +355,17 @@
   orderForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Collect form data
-    const snackName = document.getElementById('snackName').value;
-    const orderData = { snackName };
+    const orderData = {
+      snackName: document.getElementById('snackName').value, // Capture the snack name dynamically
+    };
 
+    // Capture all the fields and their values in the form
     const inputs = orderForm.querySelectorAll('input[type=number]');
     inputs.forEach(input => {
-      orderData[input.name] = input.value || 0;  // Add all form data to orderData
+      orderData[input.name] = input.value || 0;  // Capture all form data
     });
 
-    const url = 'https://script.google.com/macros/s/AKfycbzJ2avmG89HAylHff9yZWmoMUyxsh7cI37clPGo3lkkvGwK0afxMsXCD28u5Z5De-Q/exec';  // Your actual Apps Script URL
+    const url = 'https://script.google.com/macros/s/AKfycbzJ2avmG89HAylHff9yZWmoMUyxsh7cI37clPGo3lkkvGwK0afxMsXCD28u5Z5De-Q/exec';  // Replace with your actual Apps Script URL
 
     const data = new URLSearchParams();
     for (const [key, value] of Object.entries(orderData)) {
