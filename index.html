@@ -1,400 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bingo Snacks Order Form</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; }
-    h1, h2 { border-bottom: 2px solid #333; padding-bottom: 5px; }
-    .category { margin-bottom: 30px; }
-    .flavour { margin-bottom: 15px; }
-    .item { display: flex; justify-content: space-between; align-items: center; margin: 5px 0; }
-    label { flex: 2; }
-    .price { flex: 1; text-align: center; }
-    input[type=number] { width: 60px; padding: 5px; flex: 1; }
-    .total { font-weight: bold; font-size: 1.3em; margin-top: 30px; text-align: right; }
-    button { margin-top: 20px; padding: 10px 25px; font-size: 1.1em; }
+    body { font-family: Arial, sans-serif; max-width: 100%; padding: 10px; box-sizing: border-box; }
+    h1, h2, h3 { margin-top: 20px; }
+    .item { display: flex; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; }
+    .item label { flex: 1 1 60%; }
+    .item input { flex: 1 1 30%; max-width: 100px; text-align: right; }
+    button { margin-top: 20px; padding: 10px 25px; font-size: 1.1em; width: 100%; }
+    .total { margin-top: 30px; font-size: 1.2em; text-align: right; font-weight: bold; }
   </style>
 </head>
 <body>
+  <h1>Bingo Snacks Order Form</h1>
+  <form id="orderForm">
+    <input type="hidden" name="snackName" value="Tedhe Mede">
 
-<h1>Bingo Snacks Order Form</h1>
+    <h2>Tedhe Mede - Masala</h2>
+    <div class="item"><label>₹5</label><input type="number" name="tedhe-masala-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="tedhe-masala-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="tedhe-masala-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="tedhe-masala-50" value="0" data-price="50" /></div>
 
-<form id="orderForm">
+    <h2>Tedhe Mede - Extra Teekha</h2>
+    <div class="item"><label>₹5</label><input type="number" name="tedhe-teekha-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="tedhe-teekha-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="tedhe-teekha-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="tedhe-teekha-50" value="0" data-price="50" /></div>
 
-  <!-- Hidden field to store the snack name -->
-  <input type="hidden" id="snackName" name="snackName" value="Tedhe Mede">
+    <h2>Nachos - Cheese</h2>
+    <div class="item"><label>₹5</label><input type="number" name="nachos-cheese-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="nachos-cheese-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="nachos-cheese-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="nachos-cheese-50" value="0" data-price="50" /></div>
 
-  <!-- Tedhe Mede Category -->
-  <div class="category" id="tedheMede">
-    <h2>Tedhe Mede</h2>
+    <h2>Nachos - Chilli</h2>
+    <div class="item"><label>₹5</label><input type="number" name="nachos-chilli-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="nachos-chilli-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="nachos-chilli-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="nachos-chilli-50" value="0" data-price="50" /></div>
 
-        <!-- Masala Flavour -->
-    <div class="flavour">
-      <h3>Masala</h3>
-      <div class="item">
-        <label for="tedhe-masala-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="tedhe-masala-5" name="tedhe-masala-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="tedhe-masala-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="tedhe-masala-10" name="tedhe-masala-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="tedhe-masala-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="tedhe-masala-20" name="tedhe-masala-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="tedhe-masala-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="tedhe-masala-50" name="tedhe-masala-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
+    <h2>Mad Angles - Peri Peri</h2>
+    <div class="item"><label>₹5</label><input type="number" name="madangles-periperi-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="madangles-periperi-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="madangles-periperi-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="madangles-periperi-50" value="0" data-price="50" /></div>
 
+    <h2>Mad Angles - Masala</h2>
+    <div class="item"><label>₹5</label><input type="number" name="madangles-masala-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="madangles-masala-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="madangles-masala-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="madangles-masala-50" value="0" data-price="50" /></div>
 
-    <!-- Extra Teekha Flavour -->
-    <div class="flavour">
-      <h3>Extra Teekha</h3>
-      <div class="item">
-        <label for="tedhe-teekha-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="tedhe-teekha-5" name="tedhe-teekha-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="tedhe-teekha-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="tedhe-teekha-10" name="tedhe-teekha-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="tedhe-teekha-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="tedhe-teekha-20" name="tedhe-teekha-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="tedhe-teekha-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="tedhe-teekha-50" name="tedhe-teekha-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
-  </div>
+    <h2>Mad Angles - Red Alert</h2>
+    <div class="item"><label>₹5</label><input type="number" name="madangles-redalert-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="madangles-redalert-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="madangles-redalert-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="madangles-redalert-50" value="0" data-price="50" /></div>
 
-  <!-- Nachos Category -->
-  <div class="category" id="nachos">
-    <h2>Nachos</h2>
+    <h2>Mad Angles - Mystery Pickle</h2>
+    <div class="item"><label>₹5</label><input type="number" name="madangles-mysterypickle-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="madangles-mysterypickle-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="madangles-mysterypickle-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="madangles-mysterypickle-50" value="0" data-price="50" /></div>
 
-    <!-- Cheese Flavour -->
-    <div class="flavour">
-      <h3>Cheese</h3>
-      <div class="item">
-        <label for="nachos-cheese-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="nachos-cheese-5" name="nachos-cheese-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="nachos-cheese-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="nachos-cheese-10" name="nachos-cheese-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="nachos-cheese-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="nachos-cheese-20" name="nachos-cheese-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="nachos-cheese-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="nachos-cheese-50" name="nachos-cheese-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
+    <h2>Mad Angles - Pizza</h2>
+    <div class="item"><label>₹5</label><input type="number" name="madangles-pizza-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="madangles-pizza-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="madangles-pizza-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="madangles-pizza-50" value="0" data-price="50" /></div>
 
-    <!-- Chilli Limon Flavour -->
-    <div class="flavour">
-      <h3>Chilli Limon</h3>
-      <div class="item">
-        <label for="nachos-chilli-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="nachos-chilli-5" name="nachos-chilli-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="nachos-chilli-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="nachos-chilli-10" name="nachos-chilli-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="nachos-chilli-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="nachos-chilli-20" name="nachos-chilli-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="nachos-chilli-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="nachos-chilli-50" name="nachos-chilli-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
-  </div>
+    <h2>Mad Angles - Aachari</h2>
+    <div class="item"><label>₹5</label><input type="number" name="madangles-aachari-5" value="0" data-price="5" /></div>
+    <div class="item"><label>₹10</label><input type="number" name="madangles-aachari-10" value="0" data-price="10" /></div>
+    <div class="item"><label>₹20</label><input type="number" name="madangles-aachari-20" value="0" data-price="20" /></div>
+    <div class="item"><label>₹50</label><input type="number" name="madangles-aachari-50" value="0" data-price="50" /></div>
 
-  <!-- Mad Angles Category -->
-  <div class="category" id="madAngles">
-    <h2>Mad Angles</h2>
-
-    <!-- Peri Peri Flavour -->
-    <div class="flavour">
-      <h3>Peri Peri</h3>
-      <div class="item">
-        <label for="madangles-periperi-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="madangles-periperi-5" name="madangles-periperi-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="madangles-periperi-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="madangles-periperi-10" name="madangles-periperi-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="madangles-periperi-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="madangles-periperi-20" name="madangles-periperi-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="madangles-periperi-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="madangles-periperi-50" name="madangles-periperi-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
-
-    <!-- Masala Flavour -->
-    <div class="flavour">
-      <h3>Masala</h3>
-      <div class="item">
-        <label for="madangles-masala-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="madangles-masala-5" name="madangles-masala-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="madangles-masala-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="madangles-masala-10" name="madangles-masala-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="madangles-masala-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="madangles-masala-20" name="madangles-masala-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="madangles-masala-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="madangles-masala-50" name="madangles-masala-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
-
-    <!-- Red Alert Flavour -->
-    <div class="flavour">
-      <h3>Red Alert</h3>
-      <div class="item">
-        <label for="madangles-redalert-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="madangles-redalert-5" name="madangles-redalert-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="madangles-redalert-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="madangles-redalert-10" name="madangles-redalert-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="madangles-redalert-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="madangles-redalert-20" name="madangles-redalert-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="madangles-redalert-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="madangles-redalert-50" name="madangles-redalert-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
-
-    <!-- Mystery Pickle Flavour -->
-    <div class="flavour">
-      <h3>Mystery Pickle</h3>
-      <div class="item">
-        <label for="madangles-mysterypickle-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="madangles-mysterypickle-5" name="madangles-mysterypickle-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="madangles-mysterypickle-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="madangles-mysterypickle-10" name="madangles-mysterypickle-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="madangles-mysterypickle-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="madangles-mysterypickle-20" name="madangles-mysterypickle-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="madangles-mysterypickle-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="madangles-mysterypickle-50" name="madangles-mysterypickle-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
-
-    <!-- Pizza Flavour -->
-    <div class="flavour">
-      <h3>Pizza</h3>
-      <div class="item">
-        <label for="madangles-pizza-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="madangles-pizza-5" name="madangles-pizza-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="madangles-pizza-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="madangles-pizza-10" name="madangles-pizza-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="madangles-pizza-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="madangles-pizza-20" name="madangles-pizza-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="madangles-pizza-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="madangles-pizza-50" name="madangles-pizza-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
-
-    <!-- Aachari Flavour -->
-    <div class="flavour">
-      <h3>Aachari</h3>
-      <div class="item">
-        <label for="madangles-aachari-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="madangles-aachari-5" name="madangles-aachari-5" min="0" value="0" data-price="5" />
-      </div>
-      <div class="item">
-        <label for="madangles-aachari-10">MRP ₹10</label>
-        <div class="price">₹10</div>
-        <input type="number" id="madangles-aachari-10" name="madangles-aachari-10" min="0" value="0" data-price="10" />
-      </div>
-      <div class="item">
-        <label for="madangles-aachari-20">MRP ₹20</label>
-        <div class="price">₹20</div>
-        <input type="number" id="madangles-aachari-20" name="madangles-aachari-20" min="0" value="0" data-price="20" />
-      </div>
-      <div class="item">
-        <label for="madangles-aachari-50">MRP ₹50</label>
-        <div class="price">₹50</div>
-        <input type="number" id="madangles-aachari-50" name="madangles-aachari-50" min="0" value="0" data-price="50" />
-      </div>
-    </div>
-
-  </div>
-
-  <!-- No Rulz Category -->
-  <div class="category" id="noRulz">
     <h2>No Rulz</h2>
+    <div class="item"><label>Masala ₹5</label><input type="number" name="norulz-masala-5" value="0" data-price="5" /></div>
+    <div class="item"><label>Cheese ₹5</label><input type="number" name="norulz-cheese-5" value="0" data-price="5" /></div>
 
-    <!-- Masala Flavour -->
-    <div class="flavour">
-      <h3>Masala</h3>
-      <div class="item">
-        <label for="norulz-masala-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="norulz-masala-5" name="norulz-masala-5" min="0" value="0" data-price="5" />
-      </div>
-    </div>
+    <div class="total">Total Amount: ₹<span id="totalAmount">0</span></div>
 
-    <!-- Cheese Flavour -->
-    <div class="flavour">
-      <h3>Cheese</h3>
-      <div class="item">
-        <label for="norulz-cheese-5">MRP ₹5</label>
-        <div class="price">₹5</div>
-        <input type="number" id="norulz-cheese-5" name="norulz-cheese-5" min="0" value="0" data-price="5" />
-      </div>
-    </div>
-  </div>
+    <button type="submit">Place Order</button>
+  </form>
 
-  <!-- Total Amount -->
-  <div class="total">
-    Total Amount: ₹<span id="totalAmount">0</span>
-  </div>
+  <script>
+    const orderForm = document.getElementById('orderForm');
+    const totalAmountElement = document.getElementById('totalAmount');
 
-  <button type="submit">Place Order</button>
-</form>
-
-<script>
-  const orderForm = document.getElementById('orderForm');
-  const totalAmountElement = document.getElementById('totalAmount');
-
-  // Function to update the total bill amount
-  function updateTotal() {
-    let totalAmount = 0;
-
-    // Loop through all inputs with type number (quantity inputs)
-    const inputs = orderForm.querySelectorAll('input[type=number]');
-    inputs.forEach(input => {
-      const quantity = parseInt(input.value) || 0;
-      const price = parseInt(input.dataset.price) || 0;
-      totalAmount += quantity * price; // Calculate total price based on quantity * price
-    });
-
-    // Update the total amount displayed
-    totalAmountElement.textContent = totalAmount;
-  }
-
-  // Add event listeners for changes in quantity inputs
-  orderForm.querySelectorAll('input[type=number]').forEach(input => {
-    input.addEventListener('input', updateTotal);
-  });
-
-  // JavaScript for form submission and sending data to Google Apps Script
-  orderForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const orderData = {
-      snackName: document.getElementById('snackName').value, // Capture the snack name dynamically
-    };
-
-    // Capture all the fields and their values in the form
-    const inputs = orderForm.querySelectorAll('input[type=number]');
-    inputs.forEach(input => {
-      orderData[input.name] = input.value || 0;  // Capture all form data
-    });
-
-    const url = 'https://script.google.com/macros/s/AKfycbzJ2avmG89HAylHff9yZWmoMUyxsh7cI37clPGo3lkkvGwK0afxMsXCD28u5Z5De-Q/exec';  // Replace with your actual Apps Script URL
-
-    const data = new URLSearchParams();
-    for (const [key, value] of Object.entries(orderData)) {
-      data.append(key, value);  // Append each form data field
+    function updateTotal() {
+      let total = 0;
+      orderForm.querySelectorAll('input[type="number"]').forEach(input => {
+        const quantity = parseInt(input.value) || 0;
+        const price = parseInt(input.getAttribute('data-price')) || 0;
+        total += quantity * price;
+      });
+      totalAmountElement.textContent = total;
     }
 
-    try {
-      const response = await fetch(url, {
+    orderForm.querySelectorAll('input[type="number"]').forEach(input => {
+      input.addEventListener('input', updateTotal);
+    });
+
+    orderForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(orderForm);
+      const data = new URLSearchParams();
+      for (const pair of formData.entries()) {
+        data.append(pair[0], pair[1]);
+      }
+
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzJ2avmG89HAylHff9yZWmoMUyxsh7cI37clPGo3lkkvGwK0afxMsXCD28u5Z5De-Q/exec', {
         method: 'POST',
         body: data
       });
+
       const result = await response.json();
-
-      if (result.result === "success") {
-        alert("Order placed successfully!");
+      if (result.result === 'success') {
+        alert('Order placed successfully!');
         orderForm.reset();
-        updateTotal(); // Reset the total amount
+        updateTotal();
       } else {
-        alert("Failed to place order. Please try again.");
+        alert('Failed to place order. Please try again.');
       }
-    } catch (error) {
-      alert("Error submitting order. Please check your internet connection.");
-      console.error(error);
-    }
-  });
+    });
 
-  // Initialize total amount on page load
-  updateTotal();
-</script>
-
+    updateTotal();
+  </script>
 </body>
 </html>
