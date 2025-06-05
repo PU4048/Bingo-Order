@@ -111,7 +111,7 @@
 
       const data = new URLSearchParams();
       orderForm.querySelectorAll('input[name]').forEach(input => {
-       data.append(input.name, input.value || '0');
+       data.append(input.name, input.value === "" ? "0" : input.value);
     });
 
 
