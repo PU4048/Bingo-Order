@@ -662,7 +662,7 @@
       orderForm.querySelectorAll('input[name]').forEach(input => {
         data.append(input.name, input.value === "" ? "0" : input.value);
       });
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxp4f4gWiGJ7Bvq4dTypdFFckLvG39TB709aCr2RycuV_q9kPcra4Jr_GuBY4EW4hx1/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzY0ZnOJRdo0xwmwxGK9Cdg2YB7lo8KRl6Xvx6S4dO_bGFZ-uqR2MNpP28RWLANqAYO/exec', {
         method: 'POST',
         body: data
       });
