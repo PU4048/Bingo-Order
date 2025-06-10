@@ -549,18 +549,17 @@
     const orderForm = document.getElementById('orderForm');
     const totalAmountElement = document.getElementById('totalAmount');
 
-    function updateTotal() {
+  function updateTotal() {
   let total = 0;
   const rateMap = {};
   const amountMap = {};
   let tedheMasala5Qty = 0, tedheTeekha5Qty = 0, other5Qty = 0;
-  let all10Qty = 0, all10Qty_AdjustedForLines = 0;
+  let all10Qty = 0;
 
   const inputs = orderForm.querySelectorAll('input[type="number"]');
 
-  // First loop: calculate core amounts for ₹20 and ₹50
+  // First loop: calculate rates and total amounts
   inputs.forEach(input => {
-    input.min = 0;
     const quantity = parseInt(input.value) || 0;
     const price = parseInt(input.getAttribute('data-price')) || 0;
     const name = input.name;
@@ -578,8 +577,6 @@
       }
     } else if (price === 10) {
       all10Qty += quantity;
-      const pcsPerLine = (name.includes("nachos-cheese-10") || name.includes("nachos-chilli-10")) ? 10 : 12;
-      all10Qty_AdjustedForLines += quantity / pcsPerLine;
     } else if (price === 20) {
       rate = 17;
       amount = quantity * rate;
@@ -595,57 +592,61 @@
     }
   });
 
-  // Special rate calculation for Tedhe Masala ₹5
-  const tedheMasalaLines = tedheMasala5Qty / 12;
-  const tedheMasalaRate = tedheMasalaLines > 7 ? 4.10 : 4.55;
+  // Special pricing for ₹5 items
+  const tedheMasalaRate = tedheMasala5Qty / 12 > 7 ? 4.10 : 4.55;
   const tedheMasalaAmount = tedheMasala5Qty * tedheMasalaRate;
-  total += tedheMasalaAmount;
   rateMap["tedhemede-masala-5"] = tedheMasalaRate;
   amountMap["tedhemede-masala-5"] = tedheMasalaAmount;
+  total += tedheMasalaAmount;
 
-  // Tedhe Teekha ₹5
   const tedheTeekhaRate = 4.24;
   const tedheTeekhaAmount = tedheTeekha5Qty * tedheTeekhaRate;
-  total += tedheTeekhaAmount;
   rateMap["tedhemede-extrateekha-5"] = tedheTeekhaRate;
   amountMap["tedhemede-extrateekha-5"] = tedheTeekhaAmount;
+  total += tedheTeekhaAmount;
 
-  // Other ₹5 items
-  const other5Lines = other5Qty / 16;
-  const other5Rate = other5Lines > 7 ? 4.35 : 4.55;
+  const other5Rate = other5Qty / 16 > 7 ? 4.35 : 4.55;
   const other5Amount = other5Qty * other5Rate;
   total += other5Amount;
 
-  // Second loop: update display
+  // Add other ₹5 SKUs to rateMap/amountMap
+  inputs.forEach(input => {
+    const quantity = parseInt(input.value) || 0;
+    const price = parseInt(input.getAttribute('data-price')) || 0;
+    const name = input.name;
+
+    if (price === 5 && !rateMap[name]) {
+      rateMap[name] = other5Rate;
+      amountMap[name] = quantity * other5Rate;
+    }
+  });
+
+  // ₹10 pricing logic
+  inputs.forEach(input => {
+    const quantity = parseInt(input.value) || 0;
+    const price = parseInt(input.getAttribute('data-price')) || 0;
+    const name = input.name;
+
+    if (price === 10) {
+      const pcsPerLine = (name.includes("nachos-cheese-10") || name.includes("nachos-chilli-10")) ? 10 : 12;
+      const lineCount = quantity / pcsPerLine;
+      const rate = lineCount > 11 ? 8.15 : (lineCount > 1 ? 8.33 : 9.00);
+      const amount = quantity * rate;
+      rateMap[name] = rate;
+      amountMap[name] = amount;
+      total += amount;
+    }
+  });
+
+  // Second loop: display update only (no total calculation)
   inputs.forEach(input => {
     const name = input.name;
     const span = document.querySelector(`.rate-amount[data-for="${name}"]`);
-    const quantity = parseInt(input.value) || 0;
-    const price = parseInt(input.getAttribute('data-price')) || 0;
-
-    let displayRate = rateMap[name];
-    let displayAmount = amountMap[name];
-
-    if (price === 5 && !rateMap[name]) {
-      if (name.includes("bingooriginalstyle") || name.includes("yumitoschips")) {
-        displayRate = other5Rate;
-        displayAmount = quantity * displayRate;
-        total += displayAmount;
-      } else {
-        displayRate = other5Rate;
-        displayAmount = quantity * displayRate;
-      }
-    } else if (price === 10 && !rateMap[name]) {
-      const pcsPerLine = (name.includes("nachos-cheese-10") || name.includes("nachos-chilli-10")) ? 10 : 12;
-      let lineCount = quantity / pcsPerLine;
-
-      displayRate = lineCount > 11 ? 8.15 : (lineCount > 1 ? 8.33 : 9.00);
-      displayAmount = quantity * displayRate;
-      total += displayAmount;
-    }
+    const rate = rateMap[name] || 0;
+    const amount = amountMap[name] || 0;
 
     if (span) {
-      span.textContent = `Rate: ₹${displayRate.toFixed(2)} | Amount: ₹${displayAmount.toFixed(2)}`;
+      span.textContent = `Rate: ₹${rate.toFixed(2)} | Amount: ₹${amount.toFixed(2)}`;
     }
   });
 
